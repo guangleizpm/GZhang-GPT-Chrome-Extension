@@ -1,0 +1,219 @@
+@font-face {
+    font-family: proxima-nova;
+    src: url("assets/fonts/Proxima-Nova-Font.otf");
+}
+
+body {
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h1 {
+    color: #fff
+}
+
+.editable {
+    font-family: proxima-nova;
+    resize: none;
+    background-color: #454754;
+    color: #D1D5CA;
+    font-size: 3.75vh;
+    width: 94vw;
+    border: 0px;
+    border-radius: 2px;
+    padding: 1vw;
+    overflow-y: scroll;
+}
+
+.editable:empty:before {
+    content: attr(placeholder);
+    opacity: 0.5
+}
+
+.editable::-webkit-scrollbar {
+    width: 0 !important
+}
+
+#input {
+    height: 60px
+}
+
+#output {
+    height: 270px;
+}
+
+a {
+    text-decoration: none;
+    color: #16e16e;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+#api-key-section {
+    flex-shrink: 0;
+}
+
+#selected-text-section {
+    flex-shrink: 0;
+}
+
+#prompt-section {
+    flex-shrink: 0;
+}
+
+#response-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    overflow: hidden;
+}
+
+#response {
+    flex-grow: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-top: 5px;
+    resize: both;
+    min-height: 100px;
+    min-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+#response::-webkit-resizer {
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent #888 #888 transparent;
+    background-color: transparent;
+}
+
+#api-key-input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+.text-box {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    max-height: 100px;
+}
+
+#selected-text {
+    min-height: 50px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+#prompt-input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: both;
+    font-family: inherit;
+    min-height: 60px;
+    max-height: 150px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+#prompt-input::-webkit-resizer {
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent #888 #888 transparent;
+    background-color: transparent;
+}
+
+#selected-text-label,
+#prompt-label,
+#response-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#error {
+    color: #dc3545;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    flex-shrink: 0;
+}
+
+#api-key-status {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

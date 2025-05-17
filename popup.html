@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelectGPT</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="api-key-section">
+        <div id="api-key-status"></div>
+        <input type="password" id="api-key-input" placeholder="Enter your OpenAI API key" style="display: none;">
+        <button id="save-api-key" style="display: none;">Save API Key</button>
+        <button id="change-api-key" style="display: none;">Change API Key</button>
+    </div>
+    <div id="main-content">
+        <div id="selected-text-section">
+            <div id="selected-text-label">Selected Text:</div>
+            <div id="selected-text" class="text-box"></div>
+        </div>
+        <div id="prompt-section">
+            <div id="prompt-label">Your Prompt:</div>
+            <textarea id="prompt-input" placeholder="Enter your prompt here. The selected text will be added to your prompt." rows="3"></textarea>
+            <button id="send-prompt" disabled>Send to GPT</button>
+        </div>
+        <div id="response-section">
+            <div id="response-label">Response:</div>
+            <div id="response" class="text-box"></div>
+        </div>
+        <div id="error" style="color: red; display: none;"></div>
+    </div>
+
+    <script src="./popup.js"></script>
+</body>
+</html>

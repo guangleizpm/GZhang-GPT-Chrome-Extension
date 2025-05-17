@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "GZSelectGenerator",
+    "version": "1.0",
+    "description": "Get AI responses for selected text using OpenAI API",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting",
+        "tabs",
+        "sidePanel"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_title": "GZSelectGenerator"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"],
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
+    "side_panel": {
+        "default_path": "popup.html"
+    },
+    "web_accessible_resources": [{
+        "resources": ["popup.html", "popup.js", "style.css"],
+        "matches": ["<all_urls>"]
+    }],
+    "icons": {
+        "512": "assets/icons/hexagonal.png"
+    },
+    "minimum_chrome_version": "114"
+}
